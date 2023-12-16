@@ -55,7 +55,7 @@ class WallTest {
     void findBlockByColor() {
         Optional<Block> foundBlock = wall.findBlockByColor("red");
 
-
+        assertTrue(foundBlock.isPresent());
         assertEquals("red", foundBlock.get().getColor());
         assertEquals("steel", foundBlock.get().getMaterial());
     }
