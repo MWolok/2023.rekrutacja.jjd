@@ -72,4 +72,12 @@ class WallTest {
     void count() {
         assertEquals(3, wall.count());
     }
+
+    @Test
+    void getBlocksShouldReturnAllBlocks(){
+        List<Block> result = wall.getBlocks();
+       assertEquals(3, result.size());
+
+        assertTrue(result.stream().anyMatch(b -> b.getColor().equals("red") && b.getMaterial().equals("steel")));
+    }
 }

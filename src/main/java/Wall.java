@@ -1,12 +1,13 @@
 import interfaces.Block;
+import interfaces.CompositeBlock;
 import interfaces.Structure;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class Wall implements Structure {
+public class Wall implements Structure, CompositeBlock {
     private List<Block> blocks;
 
     public Wall(List<Block> blocks) {
@@ -31,5 +32,20 @@ public class Wall implements Structure {
     @Override
     public int count() {
         return blocks.size();
+    }
+
+    @Override
+    public String getColor() {
+        return null;
+    }
+
+    @Override
+    public String getMaterial() {
+        return null;
+    }
+
+    @Override
+    public List<Block> getBlocks() {
+        return blocks;
     }
 }
